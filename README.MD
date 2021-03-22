@@ -1,5 +1,6 @@
 # Installation
 
+- (Do not use yarn)
 - cd into `ui` and `run npm i`
 - cd into `server` and `run npm i`
 

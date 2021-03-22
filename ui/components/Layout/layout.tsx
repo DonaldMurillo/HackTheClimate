@@ -29,7 +29,7 @@ export default function Layout({children, theme}: LayoutProps) {
       </Box>
       <Box flex="auto" >
         <Flex h="100%">
-          { appState.openedMenu ? <Sidenav ></Sidenav> : null }
+          { appState?.openedMenu ? <Sidenav ></Sidenav> : null }
           <Box w="100%">
             { children }
           </Box>

@@ -1,7 +1,7 @@
 import { Box, Button, VStack } from "@chakra-ui/react";
 import CollectionsBookmarkIcon from '@material-ui/icons/CollectionsBookmark';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/dist/client/router";
 import AppContext from "../../state/AppContext";
 import { DASHBOARD_URL } from "../../utils/urls";
@@ -15,7 +15,10 @@ export default function Sidenav() {
       event.preventDefault();
       router.push(DASHBOARD_URL + route);
     }
-    getCurrentRoute(route);
+    useEffect(() => {
+        getCurrentRoute && getCurrentRoute(route);
+    }, [router.route])
+    
   return (
     
     <VStack h="inherit" spacing="4" minW="content" bg="#333" color="white" pr="15px" pl="5px">
