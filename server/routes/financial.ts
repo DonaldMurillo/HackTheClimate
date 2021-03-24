@@ -4,12 +4,13 @@ import { Financial } from '../models/financial.model';
 /** Route that will be added to the express */
 
 const router = express.Router();
-const path: string = '/api/v1/example';
+// const path: string = '/api/v1/example';
 
 // Define functions
 const getFinancial = () => {return "Got financial"}
 const deleteFinancial = () => {return "Deleted financial"}
-// const postFinancial = () => {return "Posted financial"}
+// const addFinancial = () => {return "Added financial"}
+// const editFinancial = () => {return "Edited financial"}
 
 // Define routes
 router.get('/financial', async (req: Request, res: Response) => {

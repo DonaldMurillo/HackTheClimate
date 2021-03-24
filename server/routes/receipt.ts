@@ -4,11 +4,13 @@ import { Receipt } from '../models/receipt.model';
 /** Route that will be added to the express */
 
 const router = express.Router();
+// const path: string = '/api/v1/example';
 
 // Define functions
 const getReceipt = () => {return "Got a receipt"}
 const deleteReceipt = () => {return "Deleted a receipt"}
-// const postReceipt = () => {return "Posted a receipt"}
+// const addReceipt = () => {return "Added a receipt"}
+// const editReceipt = () => {return "Edited a receipt"}
 
 // Define routes
 router.get('./receipt', async(req: Request, res: Response) => {
