@@ -1,5 +1,9 @@
 import express from 'express';
 import { exampleRouter } from './routes/example';
+import { eventRouter } from './routes/event';
+import { financialRouter } from './routes/financial';
+import { receiptRouter } from './routes/receipt';
+
 import cors from 'cors';
 
 /** Express server */
@@ -11,16 +15,11 @@ app.use(cors());
 
 //ROUTES
 app.use(exampleRouter); // '/api/v1/example'
+app.use(eventRouter);
+app.use(financialRouter);
+app.use(receiptRouter);
 
 //LANDING PAGE
-app.get('/', function (req, res) {
-    res.send('Hello Grammers!');
-});
-
-app.get('/welcome', function (req, res) {
-    res.send('Welcome to express');
-})
-
 app.listen(3001, function () {
     console.log('App is listening on port 3001!');
 });
