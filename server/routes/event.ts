@@ -14,22 +14,22 @@ const deleteEvent = () => {return "Deleted event"}
 // const editEvent = () => {return "Edited event"}
 
 // Define routes
-router.get('/events', async (req: Request, res: Response) => {
+router.get('/event', async (req: Request, res: Response) => {
     const event = getEvent();
     return res.status(200).send(event);
 });
 
-router.post('/events', async (req: Request, res: Response) => {
+router.post('/event', async (req: Request, res: Response) => {
     const event: Event = {...req.body};
     return res.status(201).send(event);
 });
 
-router.patch('/events', async (req: Request, res: Response) => {
+router.patch('/event', async (req: Request, res: Response) => {
     const event: Event = {...req.body};
     return res.status(201).send(event);
 });
 
-router.delete('/events', async(req: Request, res: Response) => {
+router.delete('/event', async(req: Request, res: Response) => {
     const event = deleteEvent();
     return res.status(200).send(event);
 });

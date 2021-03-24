@@ -23,12 +23,12 @@ router.post('/financial', async (req: Request, res: Response) => {
     return res.status(201).send(financial);
 });
 
-router.patch('./financial', async(req: Request, res: Response) => {
+router.patch('/financial', async(req: Request, res: Response) => {
     const financial: Financial = {...req.body};    
     return res.status(201).send(financial);
 });
 
-router.delete('./financial', async(req: Request, res: Response) => {
+router.delete('/financial', async(req: Request, res: Response) => {
     const financial = deleteFinancial();
     return res.status(200).send(financial);
 });

@@ -13,22 +13,22 @@ const deleteReceipt = () => {return "Deleted a receipt"}
 // const editReceipt = () => {return "Edited a receipt"}
 
 // Define routes
-router.get('./receipt', async(req: Request, res: Response) => {
+router.get('/receipt', async(req: Request, res: Response) => {
     const receipt = getReceipt();
     return res.status(200).send(receipt);
 });
 
-router.post('./receipt', async(req: Request, res: Response) => {
+router.post('/receipt', async(req: Request, res: Response) => {
     const receipt: Receipt = {...req.body};
     return res.status(201).send(receipt);
 });
 
-router.patch('./receipt', async(req: Request, res: Response) => {
+router.patch('/receipt', async(req: Request, res: Response) => {
     const receipt: Receipt = {...req.body};
     return res.status(201).send(receipt);
 });
 
-router.delete('./receipt', async(req: Request, res: Response) => {
+router.delete('/receipt', async(req: Request, res: Response) => {
     const receipt = deleteReceipt();
     return res.status(200).send(receipt);
 });
