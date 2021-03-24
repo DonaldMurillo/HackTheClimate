@@ -3,31 +3,34 @@ import { Financial } from '../models/financial.model';
 
 /** Route that will be added to the express */
 
-// const app = express(); wtdiff
 const router = express.Router();
 const path: string = '/api/v1/example';
 
 // Define functions
-const getFinancial = () => {return "Got financials"}
+const getFinancial = () => {return "Got financial"}
+const deleteFinancial = () => {return "Deleted financial"}
+// const postFinancial = () => {return "Posted financial"}
 
 // Define routes
-router.get('/financials', async (req: Request, res: Response) => {
-    const financials = getFinancial();
-    return res.status(200).send(financials);
+router.get('/financial', async (req: Request, res: Response) => {
+    const financial = getFinancial();
+    return res.status(200).send(financial);
 });
 
-router.post('/financials', async (req: Request, res: Response) => {
+router.post('/financial', async (req: Request, res: Response) => {
     const financial: Financial = {...req.body};
     return res.status(201).send(financial);
 });
 
 router.patch('./financial', async(req: Request, res: Response) => {
-
-})
+    const financial: Financial = {...req.body};    
+    return res.status(201).send(financial);
+});
 
 router.delete('./financial', async(req: Request, res: Response) => {
-
-})
+    const financial = deleteFinancial();
+    return res.status(200).send(financial);
+});
 
 // Export the route
 export { router as financialRouter }
