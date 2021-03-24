@@ -5,7 +5,6 @@ import { financialRouter } from './routes/financial';
 import { receiptRouter } from './routes/receipt';
 
 import cors from 'cors';
-import { isFunctionExpression } from 'typescript';
 
 /** Express server */
 const app: express.Application = express();
