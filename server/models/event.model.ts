@@ -1,11 +1,11 @@
 import { Financial } from './financial.model';
 
 interface Organization {
-    org_img: string;
-    org_name: string;	        //(ex: Casa Congo)
-    org_url: string;	            //(ex: casacongo.org)
-    org_location: string;		//(ex: “Based in Nicaragua”)
-    org_contribution: string;	//(ex: “Operations on ground & Coordination ”)
+    orgImg: string;
+    orgName: string;	        //(ex: Casa Congo)
+    orgUrl: string;	            //(ex: casacongo.org)
+    orgLocation: string;		//(ex: “Based in Nicaragua”)
+    orgContribution: string;	//(ex: “Operations on ground & Coordination ”)
 }
 
 interface Employee {
@@ -16,26 +16,26 @@ interface Employee {
 }
 
 export interface Event {
-    project_execution_date: Date;
-    project_location: string;
-    report_created_date: Date;
-    created_by: string[];
-    number_families_reached: number;
-    number_families_descr: string;
-    number_families_sub_descr: string;
-    bottles_given_total: number;
-    bottles_required: number;
-    bottles_required_description: string;
-    number_salaries_paid: number;
-    number_salaries_paid_descr: string;
-    salaried_employees_local: string[];
-    location_of_impact: string;
-    location_map_img: string;   // img url
-    event_photos_header: string;
-    event_photos: string[];     // img url
-    organizations_involved: Organization[];
-    next_delivery: string;      //ex: “NEXT DELIVERY BETWEEN 20 -40 DAYS”
-    empl_contact_list: Employee[];
+    projectExecutionDate: Date;
+    projectLocation: string;
+    reportCreatedDate: Date;
+    createdBy: string[];
+    numberFamiliesReached: number;
+    numberFamiliesDescr: string;
+    numberFamiliesSubDescr: string;
+    bottlesGivenTotal: number;
+    bottlesRequired: number;
+    bottlesRequiredDescription: string;
+    numberSalariesPaid: number;
+    numberSalariesPaidDescr: string;
+    salariedEmployeesLocal: string[];
+    locationOfImpact: string;
+    locationMapImg: string;   // img url
+    eventPhotosHeader: string;
+    eventPhotos: string[];     // img url
+    organizationsInvolved: Organization[];
+    nextDelivery: string;      //ex: “NEXT DELIVERY BETWEEN 20 -40 DAYS”
+    emplContactList: Employee[];
 
     financial: Financial;
 }
