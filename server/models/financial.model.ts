@@ -2,9 +2,11 @@ import { Receipt } from './receipt.model';
 import mongoose from 'mongoose'
 
 interface IndividualItems {
-	[items: string]: number;
+	quantity: number;
+	itemName: string;
+	unitPrice: number;
 }
-     
+
 interface ReliefPackageCosts {
 	headlineReliefCostsContentDescr: string; //(COSTS & CONTENT OF CORONA RELIEF PACKAGE (each family received two bags since our bags are too small to fit the items we sent)
 	reliefPackageContents: IndividualItems[];
