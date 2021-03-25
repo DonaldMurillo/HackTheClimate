@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import { Financial } from './financial.model';
 import { receiptSchema } from './receipt.schema';
 
-const financialSchema = new mongoose.Schema<Financial>({
+export const financialSchema = new mongoose.Schema<Financial>({
 
         reliefPackageCosts: {
             headlineReliefCostsContentDescr: String, //(COSTS & CONTENT OF CORONA RELIEF PACKAGE (each family received two bags since our bags are too small to fit the items we sent)
