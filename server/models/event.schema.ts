@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
+import { Event } from './event.model';
+import { financialSchema } from './financial.schema';
 
-const eventSchema = new mongoose.Schema({
+const eventSchema = new mongoose.Schema<Event>({
     projectExecutionDate: Date,
     projectLocation: {
         type: String,
@@ -27,58 +29,46 @@ const eventSchema = new mongoose.Schema({
     locationMapImg: String,   // img url
     eventPhotosHeader: String,
     eventPhotos: [ String ],     // img url
-
-    /*
-    organizationsInvolved: Organization[],
+    organizationsInvolved: [
+        {
+            orgImg: String,
+            orgName: {
+                String,
+                required: true
+            },	        //(ex: Casa Congo)
+            orgUrl: String,	            //(ex: casacongo.org)
+            orgLocation: {
+                String,
+                required: true
+            },		//(ex: “Based in Nicaragua”)
+            orgContribution: {
+                String,
+                required: true
+            },	//(ex: “Operations on ground & Coordination ”)
+        }
+    ],
     nextDelivery: String,      //ex: “NEXT DELIVERY BETWEEN 20 -40 DAYS”
-    emplContactList: Employee[],
-    financial: Financial;
-}
-*/
+    emplContactList: [
+        {
+            name: {
+                String,
+                required: true,
+            },
+            title: {
+                String,
+                required: true,
+            },
+            role: {
+                String,
+                required: true,
+            },
+            email: {
+                String,
+                required: true,
+            },
+        }
+    ],
+    financial: financialSchema,
 });
 
-
 const Event = mongoose.model('Event', eventSchema);
-/*
-https://github.com/Gabester0/Task-manager-api/blob/main/src/models/user.js
-
-interface Organization {
-    orgImg: string;
-    orgName: string;	        //(ex: Casa Congo)
-    orgUrl: string;	            //(ex: casacongo.org)
-    orgLocation: string;		//(ex: “Based in Nicaragua”)
-    orgContribution: string;	//(ex: “Operations on ground & Coordination ”)
-}
-
-interface Employee {
-    name: string;
-    title: string;
-    role: string;
-    email: string;
-}
-
-export interface Event {
-    projectExecutionDate: Date;
-    projectLocation: string;
-    reportCreatedDate: Date;
-    createdBy: string[];
-    numberFamiliesReached: number;
-    numberFamiliesDescr: string;
-    numberFamiliesSubDescr: string;
-    bottlesGivenTotal: number;
-    bottlesRequired: number;
-    bottlesRequiredDescription: string;
-    numberSalariesPaid: number;
-    numberSalariesPaidDescr: string;
-    salariedEmployeesLocal: string[];
-    locationOfImpact: string;
-    locationMapImg: string;   // img url
-    eventPhotosHeader: string;
-    eventPhotos: string[];     // img url
-    organizationsInvolved: Organization[];
-    nextDelivery: string;      //ex: “NEXT DELIVERY BETWEEN 20 -40 DAYS”
-    emplContactList: Employee[];
-
-    financial: Financial;
-}
-*/
