@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import { Financial } from './financial.model';
+import { receiptSchema } from './receipt.schema';
 
 const financialSchema = new mongoose.Schema<Financial>({
 
@@ -35,12 +36,18 @@ const financialSchema = new mongoose.Schema<Financial>({
             paymentConfirmationImg: String,
             funds: [
                 {
-                    orgName: String, 
-                    orgFundsUsd: Number,   
+                    orgName: {
+                        String,
+                        required: true
+                    }, 
+                    orgFundsUsd: {
+                        Number,
+                        required: true
+                    },   
                 }
             ],
         },
-        receipts: [String]
+        receipts: [receiptSchema]
 });
 
 const Financial = mongoose.model('Financial', financialSchema);
