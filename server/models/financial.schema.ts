@@ -3,10 +3,14 @@ import { Financial } from './financial.model';
 
 const financialSchema = new mongoose.Schema<Financial>({
 
-    reliefPackageCosts: {
+        reliefPackageCosts: {
             headlineReliefCostsContentDescr: String, //(COSTS & CONTENT OF CORONA RELIEF PACKAGE (each family received two bags since our bags are too small to fit the items we sent)
+            items: String,
             reliefPackageContents: [
-                [items: String]: Number,
+                {
+                    itemName: String,
+                    quantity: Number
+                }
             ],
             totalPerFamily: Number,       
             totalForFiftyFamilies: Number,      
@@ -21,13 +25,13 @@ const financialSchema = new mongoose.Schema<Financial>({
             endingLocalBalance: Number,	
             paymentConfirmationImg: String,
             funds: [
-            {
-                orgName: String, 
-                orgFundsUsd: Number,   
-            }
+                {
+                    orgName: String, 
+                    orgFundsUsd: Number,   
+                }
             ],
         },
         receipts: [String]
 });
 
-const Financial = mongoose.model('Financial', financialSchema),
+const Financial = mongoose.model('Financial', financialSchema)

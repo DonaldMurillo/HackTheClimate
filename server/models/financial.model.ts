@@ -2,7 +2,8 @@ import { Receipt } from './receipt.model';
 import mongoose from 'mongoose'
 
 interface IndividualItems {
-	[items: string]: number;
+	quantity: number;
+	itemName: string;
 }
      
 interface ReliefPackageCosts {
