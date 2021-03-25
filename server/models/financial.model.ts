@@ -1,27 +1,12 @@
 import { Receipt } from './receipt.model';
 
+interface IndividualItems {
+	[items: string]: number;
+}
+     
 interface ReliefPackageCosts {
-	headlineReliefCostsContentDescr: string; //(COSTS & CONTENT OF CORONA RELIEF PACKAGE (each family received two bags since our bags are too small to fit the items we sent))
-	handSanitizer: number;     
-	masks: number;      
-	bodysoap: number;       
-	detergent: number;      
-	rice: number;        //(10 pound /4.54kg)
-	beans: number;        //(5 pound /2.27kg)
-	sugar: number;        //(3 pound /1.36kg)
-	mazeca: number;        //(1 pack)
-	toothpaste: number;         
-	oats: number;      		//(1 pack)
-	salt: number;     		//(2 packs)
-	matchboxes: number;        //(5 packs)
-	oil: number;      			//(2litres)
-	toiletPaper: number;       
-	dieselPerDistribution: number;        
-	casaCongoDistributionTime: number;         //(incl. localsalaries)
-	lunchForWorkers: number;      
-	instructionsPrinting: number;      
-	BFWPBagsMasksForWorkers: number;        
-	plasticCoverFoodFromRain: number;       //(farda de plastico)
+	headlineReliefCostsContentDescr: string; //(COSTS & CONTENT OF CORONA RELIEF PACKAGE (each family received two bags since our bags are too small to fit the items we sent)
+	reliefPackageContents: IndividualItems[];
 	totalPerFamily: number;       
 	totalForFiftyFamilies: number;      
 }
@@ -44,7 +29,7 @@ interface OrganizationFunds {
 }
 
 export interface Financial {
-	reliefPackageCosts: ReliefPackageCosts[];
-	additionalCosts: AdditionalCosts[];
+	reliefPackageCosts: ReliefPackageCosts;
+	additionalCosts: AdditionalCosts;
 	receipts: Receipt[];
 }
