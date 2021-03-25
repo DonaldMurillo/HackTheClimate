@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import { Receipt } from './receipt.model';
 
-const receiptSchema = new mongoose.Schema<Receipt>({
+export const receiptSchema = new mongoose.Schema<Receipt>({
     rcptImg: String,	            // (receipt image url)
     rcptDesc: {
         String,

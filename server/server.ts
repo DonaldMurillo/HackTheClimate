@@ -1,4 +1,8 @@
+require('dotenv').config();
+
 import express from 'express';
+import mongoose from 'mongoose';
+require('./db/mongoose');
 import { exampleRouter } from './routes/example';
 import { eventRouter } from './routes/event';
 import { financialRouter } from './routes/financial';
@@ -18,6 +22,15 @@ app.use(exampleRouter); // '/api/v1/example'
 app.use(eventRouter);
 app.use(financialRouter);
 app.use(receiptRouter);
+
+
+mongoose.connection.on('connected', ()=>{
+    console.log('Connected!')
+});
+
+mongoose.connection.on('disconnected', ()=>{
+    console.log('Disconnected!')
+});
 
 //LANDING PAGE
 app.listen(3001, function () {
