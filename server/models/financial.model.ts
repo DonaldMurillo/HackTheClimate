@@ -1,4 +1,5 @@
 import { Receipt } from './receipt.model';
+import mongoose from 'mongoose'
 
 interface IndividualItems {
 	[items: string]: number;
@@ -28,7 +29,7 @@ interface OrganizationFunds {
 	orgFundsUsd: number;   
 }
 
-export interface Financial {
+export interface Financial extends mongoose.Document {
 	reliefPackageCosts: ReliefPackageCosts;
 	additionalCosts: AdditionalCosts;
 	receipts: Receipt[];

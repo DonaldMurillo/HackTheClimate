@@ -1,4 +1,5 @@
 import { Financial } from './financial.model';
+import mongoose from 'mongoose'
 
 interface Organization {
     orgImg: string;
@@ -15,7 +16,7 @@ interface Employee {
     email: string;
 }
 
-export interface Event {
+export interface Event extends mongoose.Document{
     projectExecutionDate: Date;
     projectLocation: string;
     reportCreatedDate: Date;
