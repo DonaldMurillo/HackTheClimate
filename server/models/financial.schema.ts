@@ -8,15 +8,24 @@ const financialSchema = new mongoose.Schema<Financial>({
             items: String,
             reliefPackageContents: [
                 {
-                    itemName: String,
-                    quantity: Number
+                    itemName: {
+                        String,
+                        required: true
+                },
+                    quantity: {
+                        Number,
+                        required: true
+                    },
+                    unitPrice: {
+                        Number,
+                        required: true
+                    }
                 }
             ],
             totalPerFamily: Number,       
             totalForFiftyFamilies: Number,      
         },
-        additionalCosts: 
-        {
+        additionalCosts: {
             exchangeRate: Number,  
             fundsWiredUsd: Number,	
             prevLocalBalance: Number,    
@@ -34,4 +43,4 @@ const financialSchema = new mongoose.Schema<Financial>({
         receipts: [String]
 });
 
-const Financial = mongoose.model('Financial', financialSchema)
+const Financial = mongoose.model('Financial', financialSchema);
