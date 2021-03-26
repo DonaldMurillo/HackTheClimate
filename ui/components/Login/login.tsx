@@ -2,18 +2,23 @@ import { Center, Box,FormControl, FormLabel, FormErrorMessage, FormHelperText, I
 import { EmailIcon, LockIcon } from '@chakra-ui/icons'
 import React from "react"
 
+import { useRouter } from "next/dist/client/router";
+
 //TODO Validate maxlenght and type of inputs
 export default function LoginComponent() {
-    //let render: boolean = true;
-    const [render, setRender] = React.useState(true);
+    const router = useRouter();
 
-    const clickMe = () => setRender(false);
+    const redirectToDashboard = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        event.preventDefault()
+        router.push("dashboard/events");
+    };
+
   return (
     <Center height="100vh" background="#d2d6de">
       {/* Global Box */}
       <Stack padding="20px" spacing={5} background="white">
         {/* Title */}
-        <Center><Link fontSize="25px" fontWeight="bold" textAlign="center">MY APP</Link></Center>
+        <Center><Link fontSize="25px" fontWeight="bold" textAlign="center">BUY FOOD WITH PLASTIC</Link></Center>
         {/* Instructions */}
         <Center textAlign="center"> Use your contact email to login or create new account.</Center>
         {/* Form */}
@@ -36,7 +41,11 @@ export default function LoginComponent() {
         {/* remember me and sign in */}
         <Box justifyContent="space-between" display="flex">
           <Checkbox>Remember Me</Checkbox>
-          <Button background="#3c8dbc" color="white" width="35%">Login</Button>
+          <Button background="#3c8dbc" color="white" width="35%" onClick={redirectToDashboard}>
+                <Link href="/dashboard/event">
+                    <span>Submit</span>
+                </Link>
+            </Button>
         </Box>
         <Button colorScheme="facebook">Sign in with Facebook</Button>
         <Button variant="ghost">Sign in with Google</Button>

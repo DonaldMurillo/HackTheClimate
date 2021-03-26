@@ -1,4 +1,5 @@
-import { Box } from '@material-ui/core'
+
+import { Box } from '@chakra-ui/layout'
 import NewEventForm from '../../../components/Events/NewEvent'
 import Layout from '../../../components/Layout/layout'
 
