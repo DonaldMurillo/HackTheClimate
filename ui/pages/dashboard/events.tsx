@@ -10,7 +10,6 @@ export default function Events() {
     const router = useRouter();
     const newOnClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
-        
         router.push("events/new");
     }
     return (
@@ -25,7 +24,6 @@ export default function Events() {
             <Link href="/dashboard/summary">
                 <span>Create New Event </span>
             </Link>
-            
           </Button>  
         <EventsHistory></EventsHistory>
       </Layout>

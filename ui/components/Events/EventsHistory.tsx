@@ -29,8 +29,8 @@ export default function EventsHistory() {
                     </GridItem>
                 </Grid>
                 <Grid templateColumns="repeat(8, 1fr)" gap={6} width="100%" borderBottom="1px" >
-                    <GridItem rowSpan={1} colSpan={4}>Nicaragua - Somewhere over the rainbow</GridItem>
-                    <GridItem rowSpan={1} colSpan={2}>March 15, 2020</GridItem>
+                    <GridItem rowSpan={1} colSpan={4}>Nicaragua - Chinandega</GridItem>
+                    <GridItem rowSpan={1} colSpan={2}>November 12, 2020</GridItem>
                     <GridItem rowSpan={1} colSpan={1}>Completed</GridItem>
                     <GridItem rowSpan={1} colSpan={1}>
                         <Button 
@@ -44,9 +44,9 @@ export default function EventsHistory() {
                     </GridItem>
                 </Grid>
                 <Grid templateColumns="repeat(8, 1fr)" gap={6} width="100%" borderBottom="1px" /* _hover={{bg:'blue'}}*/>
-                    <GridItem rowSpan={1} colSpan={4}>Nicaragua - Somewhere over the rainbow</GridItem>
+                    <GridItem rowSpan={1} colSpan={4}>Ghana - Ayensuano</GridItem>
                     <GridItem rowSpan={1} colSpan={2}>March 15, 2020</GridItem>
-                    <GridItem rowSpan={1} colSpan={1}>Completed</GridItem>
+                    <GridItem rowSpan={1} colSpan={1}>Incomplete</GridItem>
                     <GridItem rowSpan={1} colSpan={1}>
                         <Button 
                             as={IconButton} 
@@ -59,8 +59,8 @@ export default function EventsHistory() {
                     </GridItem>
                 </Grid>
                 <Grid templateColumns="repeat(8, 1fr)" gap={6} width="100%" borderBottom="1px">
-                    <GridItem rowSpan={1} colSpan={4}>Nicaragua - Somewhere over the rainbow</GridItem>
-                    <GridItem rowSpan={1} colSpan={2}>March 15, 2020</GridItem>
+                    <GridItem rowSpan={1} colSpan={4}>India - Motihari</GridItem>
+                    <GridItem rowSpan={1} colSpan={2}>June 23, 2020</GridItem>
                     <GridItem rowSpan={1} colSpan={1}>Completed</GridItem>
                     <GridItem rowSpan={1} colSpan={1}>
                         <Button 
