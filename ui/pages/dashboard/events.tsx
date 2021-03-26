@@ -2,15 +2,16 @@ import EventsHistory from '../../components/Events/EventsHistory'
 import { Button } from '@chakra-ui/react'
 import { AddIcon } from '@chakra-ui/icons'
 import Layout from '../../components/Layout/layout'
-import { DASHBOARD_URL } from '../../utils/urls'
 import { useRouter } from 'next/dist/client/router'
+import React from 'react'
+import Link from 'next/link'
 
 export default function Events() {
     const router = useRouter();
     const newOnClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
         
-        router.push(DASHBOARD_URL + "events/new");
+        router.push("events/new");
     }
     return (
       <Layout>
@@ -21,7 +22,10 @@ export default function Events() {
             ml="5%" mt="2.5%"
             onClick={newOnClick}
             >
-            Create New Event 
+            <Link href="/dashboard/summary">
+                <span>Create New Event </span>
+            </Link>
+            
           </Button>  
         <EventsHistory></EventsHistory>
       </Layout>
